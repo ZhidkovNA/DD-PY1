@@ -4,23 +4,12 @@ months = 10  # количество месяцев
 increase = 0.03  # рост цен
 
 need_money = 0  # количество денег, чтобы прожить 10 месяцев
+need_money += spend - salary
+months -= 1
 
 while months >= 1:
-    if months > 1:
-        spend = spend + spend * 0.03
-        #print(spend)
-        need_money = need_money + spend - salary
-        months = months - 1
-        #print(months)
+    spend += spend * increase
+    need_money += spend - salary
+    months -= 1
 
-    else:
-        need_money = need_money + 6000 - salary
-        months = months - 1
-        #print(months)
-
-
-#print(need_money)
-
-# TODO Оформить решение
-#print(months)
 print(round(need_money))
