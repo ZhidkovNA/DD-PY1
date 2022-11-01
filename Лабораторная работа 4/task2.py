@@ -16,3 +16,11 @@ main_str = """
     Далее нужно отсортировать слова в алфавитном порядке, а после сортировки склеить их с помощью метода строк join. Приступим!!!!
 """
 print(get_count_char(main_str))
+
+def get_count_percent(dictionary_):
+    total_number_letters = sum(dictionary_.values())
+    for letter, count in dictionary_.items():
+        count = (count / total_number_letters) * 100
+        main_grade[letter] = round(count, 2)
+    return main_grade
+print(get_count_percent(get_count_char(main_str)))
